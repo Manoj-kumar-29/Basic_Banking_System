@@ -1,13 +1,14 @@
-function sendMoney(){
+function SendMoney(){
+    var EnterName = document.getElementById("EnterName").value;
     var enterName = document.getElementById("enterName").value;
     var enterAmount = parseInt(document.getElementById("enterAmount").value);
- var enterSName = document.getElementById("enterSName").value;
-  var findSenderBankAccount = enterSName + "BankBalance";
-    var enterSAmount =parseInt(document.getElementById(findSenderBankAccount).innerHTML);
-    if (enterAmount > enterSAmount) {
+ 
+  var findSenderBankAccount = EnterName + "BankBalance";
+    var EnterAmount =parseInt(document.getElementById(findSenderBankAccount).innerHTML);
+    if (enterAmount > EnterAmount) {
        alert("Insufficient Balance.")
     }
- else {
+    else {
        var findUserBankAccount = enterName + "BankBalance";
       
        var finalAmount = parseInt(document.getElementById(findUserBankAccount).innerHTML) + enterAmount;

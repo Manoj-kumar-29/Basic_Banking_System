@@ -7,37 +7,35 @@
     <title>Customers</title>
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
-    <link rel="stylesheet" href="customer.css">
+        <link rel="stylesheet" href="customer.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    
 </head>
+    
+
 
 <body>
     <!-- navbar starts here  -->
-    <section id="nav-bar">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#"><img src=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars"="true"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                         <!-- <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>-->
-                          <a class="nav-link" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="customer.html">View Customers & Transfer History<span class="sr-only">(current)</span></a>
-              </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="bank.html">About Us</a>
-        </li>
-              </ul>
-          </div>
-        </nav>
-        </section>
+    <nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo">SPARKS BANK</label>
+  <ul>
+    <li><a class="active" href="home.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Servises</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Feedback</a></li>
+    
+    
+  </UL>
+</nav>
     <!-- navbar ends here  -->
     <section id="main" class="coloured-section">
     <hr>
@@ -45,12 +43,12 @@
     <hr>
     <div class="my-info text-center">
 
-        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
-        <a class="btn btn-info" href="history.html" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
+        <button class="btn btn-info" data-toggle="modal" data-target="#SendMoney">Send Money</button>
+        <a class="btn btn-info" href="history.html" data-toggle="modal" data-target="#SeeAllTransactions">See All Transactions</a>
     </div>
-
+    
     <!-- Modal send money -->
-    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="SendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -63,27 +61,27 @@
                 <div class="modal-body">
                     <form action="">
                             <div class="input-group mb-3">
-                            <input type="text" id="enterSName" class="form-control" placeholder="Sender's username"
-                                aria-label="Sender's username" aria-describedby="basic-addon2">
+                            <input type="text" id="EnterName" class="form-control" placeholder="Sender name"
+                                aria-label="Sender name" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <span class="input-group-text" id="basic-addon2">@email.com</span>
+                                
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
-                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient name"
+                                aria-label="Recipient name" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <span class="input-group-text" id="basic-addon2">@email.com</span>
+                                
                             </div>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Rs</span>
+                                
                             </div>
-                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                            <input type="text" id="enterAmount" class="form-control" placeholder="Enter Amount"
                                 aria-label="Amount">
                             <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
+                                
                             </div>
                         </div>
 
@@ -91,7 +89,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                    <button type="button" onclick="SendMoney()" class="btn btn-success" data-dismiss="modal">Send
                         Money</button>
                 </div>
             </div>
@@ -99,7 +97,7 @@
     </div>
 
     <!-- Modal transaction History-->
-    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="SeeAllTransactions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -127,91 +125,91 @@
             <table class="table table-hover table-bordered">
                 <thead>
                     <tr class="table-danger">
-                        <th scope="col">SR. No.</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">E-mail ID</th>
-                        <th scope="col">Bank Balance</th>
+                        <th scope="col">SR.NO.</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">E-MAIL ID</th>
+                        <th scope="col">BALANCE</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="table-light">
                         <td scope="row">1</td>
-                        <td>Shreya Nair</td>
-                        <td>shreya@email.com</td>
+                        <td>Manoj</td>
+                        <td>manoj@email.com</td>
                         <td>
-                            <p id="shreyaBankBalance">50000</p>
+                            <p id="manojBankBalance">10000</p>
                         </td>
                     </tr>
                     <tr class="table-info">
                         <td scope="row">2</td>
-                        <td>Alfred</td>
-                        <td>alfred@email.com</td>
+                        <td>Cidharth</td>
+                        <td>cidharth@email.com</td>
                         <td>
-                            <p id="alfredBankBalance">24000</p>
+                            <p id="cidharthBankBalance">20000</p>
                         </td>
                     </tr>
                     <tr class="table-light">
                         <td scope="row">3</td>
-                        <td>Sakshee</td>
-                        <td>sakshee@email.com</td>
+                        <td>Mahesh</td>
+                        <td>mahesh@email.com</td>
                         <td>
-                            <p id="saksheeBankBalance">30000</p>
+                            <p id="maheshBankBalance">30000</p>
                         </td>
                     </tr>
                     <tr class="table-info">
                         <td scope="row">4</td>
-                        <td>Manisha</td>
-                        <td>manisha@email.com</td>
+                        <td>Arun</td>
+                        <td>arun@email.com</td>
                         <td>
-                            <p id="manishaBankBalance">40000</p>
+                            <p id="arunBankBalance">40000</p>
                         </td>
                     </tr>
                     <tr class="table-light">
                         <td scope="row">5</td>
-                        <td>Harsh</td>
-                        <td>harsh@email.com</td>
+                        <td>Anand</td>
+                        <td>anand@email.com</td>
                         <td>
-                            <p id="harshBankBalance">60000</p>
+                            <p id="anandBankBalance">50000</p>
                         </td>
                     </tr>
                     <tr class="table-info">
                         <td scope="row">6</td>
-                        <td>Nikhil</td>
-                        <td>nikhil@email.com</td>
+                        <td>Meiyarasu</td>
+                        <td>meiyarasu@email.com</td>
                         <td>
-                            <p id="nikhilBankBalance">100000</p>
+                            <p id="meiyarasuBankBalance">60000</p>
                         </td>
                     </tr>
                     <tr class="table-light">
                         <td>7</td>
-                        <td>Tanish</td>
-                        <td>tanish@email.com</td>
+                        <td>Anish</td>
+                        <td>anish@email.com</td>
                         <td>
-                            <p id="tanishBankBalance">56000</p>
+                            <p id="tanishBankBalance">70000</p>
                         </td>
                     </tr>
                     <tr class="table-info">
                         <td scope="row">8</td>
-                        <td>Nandish</td>
-                        <td>nandish@email.com</td>
+                        <td>Monish</td>
+                        <td>monish@email.com</td>
                         <td>
-                            <p id="nandishBankBalance">35000</p>
+                            <p id="monishBankBalance">80000</p>
                         </td>
                     </tr>
                     <tr class="table-light">
                         <td scope="row">9</td>
-                        <td>Mrunal</td>
-                        <td>mrunal@email.com</td>
+                        <td>Hemanth</td>
+                        <td>hemanth@email.com</td>
                         <td>
-                            <p id="mrunalBankBalance">85000</p>
+                            <p id="hemanthBankBalance">90000</p>
                         </td>
                     </tr>
                     <tr class="table-info">
                         <td scope="row">10</td>
-                        <td>Pankj</td>
-                        <td>pankj@email.com</td>
+                        <td>Gokul</td>
+                        <td>gokul@email.com</td>
                         <td>
-                            <p id="pankjBankBalance">145000</p>
+                            <p id="gokulBankBalance">100000</p>
                         </td>
                     </tr>
                 </tbody>
@@ -219,10 +217,31 @@
         </div>
     </div>
     </section>
-
-    <script src="script.js"></script>
+     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+    
+    <footer id="footer" class="coloured-section">
+  <p>SOCIAL MEDIA LINKS</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    &nbsp;&nbsp;&nbsp;
+    <i class="social-icon fa fa-facebook-square"aria-hidden></i>
+    &nbsp;
+
+    <i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+    &nbsp;
+
+  <i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+  &nbsp;
+
+    <i class="social-icon fa fa-linkedin" aria-hidden="true"></i>
+    &nbsp;
+    <p>ABC road,nundambakkam,chennai,tamil nadu</p>
+
+    <p>© Copyright 2020 SPARKS Bank.</p>
+  </footer>
+
+   
 </body>
 </html
